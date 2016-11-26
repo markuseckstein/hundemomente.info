@@ -1,9 +1,10 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {By} from '@angular/platform-browser';
+import {DebugElement} from '@angular/core';
 
-import { AccordionPanelComponent } from './accordion-panel.component';
+import {AccordionPanelComponent} from './accordion-panel.component';
+import {AccordionComponent} from '../accordion.component';
 
 describe('AccordionPanelComponent', () => {
   let component: AccordionPanelComponent;
@@ -11,9 +12,10 @@ describe('AccordionPanelComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AccordionPanelComponent ]
+      declarations: [AccordionPanelComponent],
+      providers: [AccordionComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

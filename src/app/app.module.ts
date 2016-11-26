@@ -5,10 +5,12 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import {AccordionModule} from './accordion/accordion.module';
+import { YearCalcComponent } from './year-calc/year-calc.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    YearCalcComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,39 @@
-<h1>
-  {{title}}
-</h1>
+<hm-accordion>
+  <hm-accordion-panel [title]="'Gesundheit'" [isOpen]="true">
+    <p>Die Hunde sind absolut gesund, haben alle wichtigen Impfungen, werden regelmäßig entwurmt und bekommen eine Floh-
+      und Zeckenprophylaxe. Scotti ist seit er 8 Wochen alt war bei mir, Emma seit sie 10 Wochen alt ist.</p>
+  </hm-accordion-panel>
+  <hm-accordion-panel [title]="'Qualifikation'">
+    <p>Scotti hat die <a
+      href="http://www.dhv-hundesport.de/sportarten/basisausbildung/begleithundpruefung.html"
+      target="_blank">Begleithundprüfung</a> im Oktober 2014 erfolgreich
+      bestanden, außerdem gehen wir in die <a
+        href="http://www.hundeschule-socius.de/"
+        target="_blank">Hundschule Socius</a>.</p>
+    <p>
+      Emma geht ebenfalls mit in die Hundeschule.
+    </p>
+  </hm-accordion-panel>
+  <hm-accordion-panel [title]="'Welche Risiken gibt es?'">
+    <p>
+      Auch wenn meine Hunde absolut lieb sind und eher flüchten würden als zu beißen, so sind sie doch Tiere und diese
+      kann man nie zu 100 % vorhersagen. Daher sind sie haftpflichtversichert – dadurch werden sämtliche Schäden, die
+      entstehen können, abgedeckt.
+    </p>
+    <p>
+      Da die Hunde völlig gesund sind und ich regelmäßig Prophylaxe betreibe, wird das gesundheitliche Risiko für die
+      Personen minimiert.
+    </p>
+  </hm-accordion-panel>
+  <hm-accordion-panel [title]="'Probestunde'">
+    <p>Gerne können wir einen Termin zu einer kostenlosen Probestunde <a
+      href="#contact">vereinbaren</a>.</p>
+  </hm-accordion-panel>
+  <hm-accordion-panel [title]="'Aktuelle Einsatzorte'">
+    <ul>
+      <li>Auhof in Hilpoltstein</li>
+      <li><a href="http://senioren-postbauer-heng.de/" target="_blank">Seniorenheim
+        am Schauerholz</a></li>
+    </ul>
+  </hm-accordion-panel>
+</hm-accordion>

@@ -6,11 +6,15 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import {AccordionModule} from './accordion/accordion.module';
 import { YearCalcComponent } from './year-calc/year-calc.component';
+import { HeaderComponent } from './header/header.component';
+import { ScrollTrackerDirective } from './scroll-tracker.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    YearCalcComponent
+    YearCalcComponent,
+    HeaderComponent,
+    ScrollTrackerDirective
   ],
   imports: [
     BrowserModule,

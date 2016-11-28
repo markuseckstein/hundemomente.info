@@ -1,0 +1,49 @@
+
+:host {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 160px;
+  transition: height 500ms ease-out;
+}
+
+:host.header--small {
+  height: 120px;
+}
+
+.header__logo {
+  display: flex;
+  flex-direction: column;
+}
+
+.header__logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+:host.header--small .header__logo {
+  flex-direction: row;
+}
+
+.header__logo-image {
+  background-image: url('../../assets/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 120px;
+  height: 120px;
+}
+
+.header__menu {
+  display: flex;
+  flex-direction: row;
+
+  & a {
+    padding: 10px 20px;
+  }
+}

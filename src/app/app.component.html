@@ -1,4 +1,14 @@
 <hm-header #theHeader hm-scroll-tracker (scrolled)="theHeader.isSmall = $event > 0"></hm-header>
+
+<hm-dog [firstPart]="'Mein Name ist'"
+        [highlightPart]="'Scotty'"
+        [subHeading]="'Ich bin ein Labradoodle'"
+        [backgroundImage]="'../assets/banner-scotti.jpg'"></hm-dog>
+<hm-dog [firstPart]="'Ich bin'"
+        [highlightPart]="'Emma'"
+        [subHeading]="'Ich bin ebenfalls ein Labradoodle'"
+        [backgroundImage]="'../assets/banner-emma.jpg'"></hm-dog>
+
 <h1 id="about" class="title text-center">Über <span>Hunde&shy;momente</span></h1>
 <p class="lead text-center">Hundebegegnungen für Senioren, Kinder und Menschen mit Behinderung.</p>
 <p class="lead text-center">In Einzel- und Gruppensitzungen.</p>

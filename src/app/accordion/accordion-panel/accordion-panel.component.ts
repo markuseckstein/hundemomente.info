@@ -7,11 +7,11 @@ import {AccordionComponent} from '../accordion.component';
   styleUrls: ['./accordion-panel.component.scss'],
   animations: [ // TODO fix this!
     trigger('smooth', [
-      transition('void => *', [
+      transition('closed => open', [
         style({height: '0px'}),
         animate('1000ms', style({height: 'auto'}))
       ]),
-      transition('* => void', [
+      transition('open => closed', [
         style({height: '*'}),
         animate('1000ms', style({height: '0px'}))
       ])
@@ -19,6 +19,10 @@ import {AccordionComponent} from '../accordion.component';
   ]
 })
 export class AccordionPanelComponent implements OnInit {
+  get smooth(): string {
+    return this.isOpen ? 'open' : 'closed';
+  }
+
   @Input() isOpen = false;
   @Input() title: string;
 

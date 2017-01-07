@@ -40,6 +40,10 @@ $border-radius: 5px;
   background-color: #fafafa;
 }
 
+.accordion-panel__content-wrapper--hidden {
+  display: none;
+}
+
 .accordion-panel__content {
   padding: 15px;
 }

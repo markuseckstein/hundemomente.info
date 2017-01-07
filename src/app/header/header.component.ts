@@ -1,25 +1,19 @@
-import {Component, OnInit, Input, HostBinding} from '@angular/core';
+import {Component, OnInit, Input, HostBinding, ChangeDetectionStrategy} from '@angular/core';
 
 @Component({
   selector: 'hm-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss',
+  './header.component.medium.scss',
+  './header.component.small.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HeaderComponent implements OnInit {
-  @Input()
-  isSmall = false;
+export class HeaderComponent {
+  menuIsOpen = false;
+
+  @Input() isSmall = false;
 
   @HostBinding('class.header--small') get small() {
     return this.isSmall
   };
-
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
-
-  onScrolled(event: any) {
-    console.log('header scrolled:', event);
-  }
 }

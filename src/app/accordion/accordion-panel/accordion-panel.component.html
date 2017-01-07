@@ -1,7 +1,7 @@
 <div class="accordion-panel__title" [class.accordion-panel__title--active]="isOpen">
   <span class="accordion-panel__title-heading">{{title}}</span>
   <i class="fa" [class.fa-plus-square-o]="!isOpen" [class.fa-minus-square-o]="isOpen" aria-hidden="true"></i></div>
-<div *ngIf="isOpen" [@smooth] class="accordion-panel__content-wrapper" (@smooth.start)="animationStarted($event)"
+<div [class.accordion-panel__content-wrapper--hidden]="!isOpen" [@smooth] class="accordion-panel__content-wrapper" (@smooth.start)="animationStarted($event)"
      (@smooth.done)="animationDone($event)">
   <div class="accordion-panel__content">
     <ng-content></ng-content>

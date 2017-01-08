@@ -1,11 +1,11 @@
-import {Component, OnInit, Input, HostBinding, ChangeDetectionStrategy} from '@angular/core';
+import {Component, Input, HostBinding, ChangeDetectionStrategy} from '@angular/core';
 
 @Component({
   selector: 'hm-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss',
-  './header.component.medium.scss',
-  './header.component.small.scss'],
+    './header.component.medium.scss',
+    './header.component.small.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent {
@@ -16,4 +16,9 @@ export class HeaderComponent {
   @HostBinding('class.header--small') get small() {
     return this.isSmall
   };
+
+  onNavClick(anchor:string) {
+    this.menuIsOpen = false;
+    window.location.hash = anchor;
+  }
 }

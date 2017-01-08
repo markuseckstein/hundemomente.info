@@ -1,6 +1,6 @@
 <hm-header #theHeader hm-scroll-tracker (scrolled)="theHeader.isSmall = $event > 0"></hm-header>
 
-<hm-dog [firstPart]="'Mein Name ist'"
+<hm-dog id="home" [firstPart]="'Mein Name ist'"
         [highlightPart]="'Scotty'"
         [subHeading]="'Ich bin ein Labradoodle'"
         [backgroundImage]="'../assets/banner-scotti.jpg'"></hm-dog>
@@ -46,7 +46,7 @@
   Rosalie (<hm-year-calc [yearAndMonth]="'2010-4'"></hm-year-calc> Jahre).
 </p>
 
-<h2>Was macht eigentlich ein Hundebesuchsdienst?</h2>
+<h2 id="offer">Was macht eigentlich ein Hundebesuchsdienst?</h2>
 <p>
   Für jeden Besuch versuche ich neue kleine Aufgaben an die Personen zu stellen, welche gerade
   in der Gruppe in den Gemeinschaftsräumen gut zu erfüllen sind. Die Personen sollen

@@ -47,13 +47,14 @@
     padding-left: 40px;
     transform: translateX(-$menu-width);
     transition: transform 300ms ease-out;
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0.9);
     &.header__menu--open {
       transform: translateX(0);
     }
 
     a {
       margin-bottom: 25px;
+      color: white;
     }
   }
 

@@ -6,13 +6,12 @@
   <h3 class="header__subheading">Hundebegegnungen mit Menschen</h3>
 </div>
 
-<div class="header__menu" [class.header__menu--open]="menuIsOpen"
-(click)="menuIsOpen = false">
-  <a href="#home">Home</a>
-  <a href="#about">Über uns</a>
-  <a href="#offer">Angebot</a>
-  <a href="#pictures">Bilder</a>
-  <a href="#contact">Kontakt</a>
+<div class="header__menu" [class.header__menu--open]="menuIsOpen">
+  <a (click)="onNavClick('home')">Home</a>
+  <a (click)="onNavClick('about')">Über uns</a>
+  <a (click)="onNavClick('offer')">Angebot</a>
+  <a (click)="onNavClick('bilder')">Bilder</a>
+  <a (click)="onNavClick('contact')">Kontakt</a>
 </div>
 
 <div (click)="menuIsOpen = !menuIsOpen" class="header__small-menu-titlebar">

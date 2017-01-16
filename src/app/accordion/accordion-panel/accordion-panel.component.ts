@@ -5,20 +5,19 @@ import {AccordionComponent} from '../accordion.component';
   selector: 'hm-accordion-panel',
   templateUrl: './accordion-panel.component.html',
   styleUrls: ['./accordion-panel.component.scss'],
-  animations: [ // TODO fix this!
+  animations: [
     trigger('smooth', [
-      transition('closed => open', [
-        style({height: '0px'}),
-        animate('1000ms', style({height: 'auto'}))
-      ]),
-      transition('open => closed', [
-        style({height: '*'}),
-        animate('1000ms', style({height: '0px'}))
-      ])
+      state('open', style({
+        height: '*'
+      })),
+      state('closed', style({
+        height: '0px'
+      })),
+      transition('closed <=> open', animate('300ms ease-in-out'))
     ])
   ]
 })
-export class AccordionPanelComponent implements OnInit {
+export class AccordionPanelComponent {
   get smooth(): string {
     return this.isOpen ? 'open' : 'closed';
   }
@@ -30,25 +29,11 @@ export class AccordionPanelComponent implements OnInit {
     accordion.addPanel(this);
   }
 
-  ngOnInit() {
-  }
-
   @HostListener('click')
   toggle() {
     this.isOpen = !this.isOpen;
-
-    console.log('isOpen:' + this.isOpen);
-
     if (this.isOpen) {
       this.accordion.togglePanel(this);
     }
-  }
-
-  animationStarted($event) {
-    console.log('started:', $event);
-  }
-
-  animationDone($event) {
-    console.log('done:', $event);
   }
 }

@@ -19,6 +19,9 @@ export class HeaderComponent {
 
   onNavClick(anchor:string) {
     this.menuIsOpen = false;
-    window.location.hash = anchor;
+    if (window.location.hash !== anchor) {
+      window.location.hash = anchor;
+      window.scrollBy(0, -110);
+    }
   }
 }

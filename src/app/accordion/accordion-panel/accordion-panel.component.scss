@@ -28,20 +28,12 @@ $border-radius: 5px;
   }
 }
 
-.accordion-panel__title-heading {
-
-}
-
 .accordion-panel__title--active {
   background-color: $highlight-color;
 }
 
 .accordion-panel__content-wrapper {
   background-color: #fafafa;
-}
-
-.accordion-panel__content-wrapper--hidden {
-  display: none;
 }
 
 .accordion-panel__content {

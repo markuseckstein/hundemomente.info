@@ -1,5 +1,11 @@
 :host {
   z-index: 1;
+
+  .header__menu {
+    & a {
+      cursor: pointer;
+    }
+  }
 }
 
 @media only screen and (min-width: 1001px) {
@@ -22,7 +28,7 @@
 
   :host.header--small {
     height: 120px;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, .9);
     & .header__subheading {
       transform: translateX(120px);
     }

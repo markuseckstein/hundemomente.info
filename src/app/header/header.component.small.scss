@@ -11,7 +11,7 @@
     display: flex;
     justify-content: space-between;
     color: white;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, .3);
     position: fixed;
     top: 0;
     left: 0;
@@ -22,7 +22,7 @@
 
   :host.header--small {
     height: $header-height-small;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, .9);
 
     & .header__menu{
       top: $header-height-small;
@@ -47,7 +47,7 @@
     padding-left: 40px;
     transform: translateX(-$menu-width);
     transition: transform 300ms ease-out;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, .9);
     &.header__menu--open {
       transform: translateX(0);
     }

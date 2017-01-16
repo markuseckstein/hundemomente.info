@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AccordionPanelComponent} from './accordion-panel/accordion-panel.component';
 
 @Component({
@@ -6,15 +6,13 @@ import {AccordionPanelComponent} from './accordion-panel/accordion-panel.compone
   templateUrl: './accordion.component.html',
   styleUrls: ['./accordion.component.scss']
 })
-export class AccordionComponent implements OnInit {
-  private panels:Array<AccordionPanelComponent> = [];
+export class AccordionComponent {
+  private panels: Array<AccordionPanelComponent> = [];
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor() {
   }
 
-  togglePanel(activePanel:AccordionPanelComponent) {
+  togglePanel(activePanel: AccordionPanelComponent) {
     console.log('accordion.togglePanel:' + activePanel.title);
     this.panels.forEach(panel => {
       if (panel !== activePanel) {
@@ -23,7 +21,7 @@ export class AccordionComponent implements OnInit {
     });
   }
 
-  addPanel(panel:AccordionPanelComponent) {
+  addPanel(panel: AccordionPanelComponent) {
     this.panels.push(panel);
   }
 }

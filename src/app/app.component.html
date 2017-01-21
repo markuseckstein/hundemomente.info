@@ -131,7 +131,7 @@
 <h1 class="text-center title" id="bilder">Bilder</h1>
 <p class="lead text-center">Einige Beispiele von der Arbeit mit Scotti und Emma.<br></p>
 
-<gallery [flexBorderSize]="3" [flexImageSize]="7"></gallery>
+<gallery [flexBorderSize]="3" [flexImageSize]="7" (viewerChange)="onViewerChange($event)"></gallery>
 
 <h1 id="clients" class="title text-center">Beispielvideo</h1>
 <video style="width:100%" src="assets/video/scotti_video_small.mp4" controls

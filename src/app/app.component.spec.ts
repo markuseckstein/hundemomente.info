@@ -1,18 +1,31 @@
+import { HeaderComponent } from './header/header.component';
+import { ScrollTrackerDirective } from './scroll-tracker.directive';
+import { DogComponent } from './dog/dog.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { Angular2ImageGalleryModule } from 'angular2-image-gallery/app';
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import {AccordionModule} from './accordion/accordion.module';
-import {YearCalcComponent, dateProvider} from './year-calc/year-calc.component';
+import { AccordionModule } from './accordion/accordion.module';
+import { YearCalcComponent, dateProvider } from './year-calc/year-calc.component';
 
 describe('AppComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent, YearCalcComponent
+        AppComponent,
+        YearCalcComponent,
+        HeaderComponent,
+        ScrollTrackerDirective,
+        DogComponent
       ],
-      imports: [AccordionModule],
-      providers: [{provide: dateProvider, useValue: new Date(2016, 10)}]
+      imports: [
+        BrowserModule,
+        AccordionModule,
+        Angular2ImageGalleryModule
+      ],
+      providers: [{ provide: dateProvider, useValue: new Date(2016, 10) }]
     });
   });
 
@@ -21,13 +34,4 @@ describe('AppComponent', () => {
     let app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
-
-
-
-  // it('should render title in a h1 tag', async(() => {
-  //   let fixture = TestBed.createComponent(AppComponent);
-  //   fixture.detectChanges();
-  //   let compiled = fixture.debugElement.nativeElement;
-  //   expect(compiled.querySelector('h1').textContent).toContain('hm works!');
-  // }));
 });

@@ -13,6 +13,11 @@ export class HeaderComponent {
 
   @Input() isSmall = false;
 
+  @HostBinding('class.header--hidden')
+  @Input()
+  isHidden = false;
+
+
   @HostBinding('class.header--small') get small() {
     return this.isSmall
   };

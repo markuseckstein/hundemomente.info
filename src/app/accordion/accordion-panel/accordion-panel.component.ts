@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, HostListener, style, animate, transition, state, trigger} from '@angular/core';
+import {Component, Input, HostListener, style, animate, transition, state, trigger} from '@angular/core';
 import {AccordionComponent} from '../accordion.component';
 
 @Component({

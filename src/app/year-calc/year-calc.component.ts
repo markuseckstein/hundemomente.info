@@ -18,7 +18,8 @@ export class YearCalcComponent implements OnInit {
   }
 
   ngOnInit() {
-    let [year, month] = this.yearAndMonth.split('-').map(x => parseInt(x));
+    // tslint:disable-next-line
+    let [year, month] = this.yearAndMonth.split('-').map(x => parseInt(x, 10));
     month--;
     this.result = this.getDifferenceInYears(this.now, new Date(year, month));
   }

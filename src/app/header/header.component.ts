@@ -19,10 +19,10 @@ export class HeaderComponent {
 
 
   @HostBinding('class.header--small') get small() {
-    return this.isSmall
+    return this.isSmall;
   };
 
-  onNavClick(anchor:string) {
+  onNavClick(anchor: string) {
     this.menuIsOpen = false;
     if (window.location.hash !== anchor) {
       window.location.hash = anchor;

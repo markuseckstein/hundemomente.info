@@ -1,13 +1,13 @@
-import {Directive, Output, EventEmitter} from '@angular/core';
+import {Directive, Output, EventEmitter, HostListener} from '@angular/core';
 
 @Directive({
-  selector: '[hm-scroll-tracker]',
-  host: {'(window:scroll)': 'scrollTrack($event)'},
+  selector: '[hmScrollTracker]',
 })
 export class ScrollTrackerDirective {
-  @Output() scrolled:EventEmitter<any> = new EventEmitter();
+  @Output() scrolled: EventEmitter<any> = new EventEmitter();
 
-  scrollTrack(event:any) {
+  @HostListener('window:scroll')
+  scrollTrack(event: any) {
     this.scrolled.emit(document.body.scrollTop);
   }
 }

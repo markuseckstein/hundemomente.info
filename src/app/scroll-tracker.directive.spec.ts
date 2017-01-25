@@ -5,7 +5,7 @@ import { ScrollTrackerDirective } from './scroll-tracker.directive';
 
 describe('ScrollTrackerDirective', () => {
   it('should create an instance', () => {
-    let directive = new ScrollTrackerDirective();
+    const directive = new ScrollTrackerDirective();
     expect(directive).toBeTruthy();
   });
 });

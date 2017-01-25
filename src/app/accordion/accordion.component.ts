@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {AccordionPanelComponent} from './accordion-panel/accordion-panel.component';
 
 @Component({
@@ -8,9 +8,6 @@ import {AccordionPanelComponent} from './accordion-panel/accordion-panel.compone
 })
 export class AccordionComponent {
   private panels: Array<AccordionPanelComponent> = [];
-
-  constructor() {
-  }
 
   togglePanel(activePanel: AccordionPanelComponent) {
     console.log('accordion.togglePanel:' + activePanel.title);

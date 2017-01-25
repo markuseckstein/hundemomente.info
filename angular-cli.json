@@ -1,6 +1,6 @@
 {
   "project": {
-    "version": "1.0.0-beta.25.5",
+    "version": "1.0.0-beta.26",
     "name": "hundemomente"
   },
   "apps": [
@@ -10,7 +10,8 @@
       "assets": [
         "assets",
         "favicon.ico",
-        "google713b889e716eb24d.html"
+        "google713b889e716eb24d.html",
+        ".htaccess"
       ],
       "index": "index.html",
       "main": "main.ts",

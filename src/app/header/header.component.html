@@ -7,11 +7,11 @@
 </div>
 
 <div class="header__menu" [class.header__menu--open]="menuIsOpen">
-  <a (click)="onNavClick('home')">Home</a>
-  <a (click)="onNavClick('about')">Über uns</a>
-  <a (click)="onNavClick('offer')">Angebot</a>
-  <a (click)="onNavClick('bilder')">Bilder</a>
-  <a (click)="onNavClick('contact')">Kontakt</a>
+  <a pageScroll (click)="menuIsOpen = false" href="#home">Home</a>
+  <a pageScroll [pageScrollOffset]="118" (click)="menuIsOpen = false" href="#about">Über uns</a>
+  <a pageScroll [pageScrollOffset]="118" (click)="menuIsOpen = false" href="#offer">Angebot</a>
+  <a pageScroll [pageScrollOffset]="118" (click)="menuIsOpen = false" href="#bilder">Bilder</a>
+  <a pageScroll [pageScrollOffset]="118" (click)="menuIsOpen = false" href="#contact">Kontakt</a>
 </div>
 
 <div (click)="menuIsOpen = !menuIsOpen" class="header__small-menu-titlebar">

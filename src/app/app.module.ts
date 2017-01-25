@@ -7,6 +7,7 @@ import {HeaderComponent} from './header/header.component';
 import {ScrollTrackerDirective} from './scroll-tracker.directive';
 import {DogComponent} from './dog/dog.component';
 import {Angular2ImageGalleryModule} from 'angular2-image-gallery';
+import {Ng2PageScrollModule} from 'ng2-page-scroll';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {Angular2ImageGalleryModule} from 'angular2-image-gallery';
   imports: [
     BrowserModule,
     AccordionModule,
-    Angular2ImageGalleryModule
+    Angular2ImageGalleryModule,
+    Ng2PageScrollModule.forRoot()
   ],
   bootstrap: [AppComponent]
 })

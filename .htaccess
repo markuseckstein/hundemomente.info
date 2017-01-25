@@ -1,6 +1,7 @@
 ExpiresActive on
 ExpiresByType image/gif "now plus 1 years"
 ExpiresByType image/jpg "now plus 1 years"
+ExpiresByType text/css "now plus 1 years"
 ExpiresByType application/javascript "now plus 1 years"
 ExpiresByType text/javascript "now plus 1 years"
 ExpiresByType application/json "now plus 3 minutes"

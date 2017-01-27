@@ -31,6 +31,13 @@
     transition: height 500ms ease-out, background-color 500ms ease-out;
   }
 
+  // this is needed because of changes in flexbox spec which now behave different
+  // in Chrome than in other browsers:
+  // https://stackoverflow.com/questions/26895349/how-can-i-get-ff-33-x-flexbox-behavior-in-ff-34-x
+  * {
+    min-height: 0;
+  }
+
   :host.header--small {
     height: 120px;
     background-color: rgba(0, 0, 0, .9);

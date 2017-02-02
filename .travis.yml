@@ -1,8 +1,8 @@
-sudo: required
+
 dist: trusty
 language: node_js
 node_js:
-  - '6'
+  - '7'
 
 addons:
 apt:
@@ -10,7 +10,6 @@ apt:
     - google-chrome
   packages:
     - google-chrome-stable
-    - google-chrome-beta
 
 before_install:
   - export CHROME_BIN=chromium-browser
@@ -18,12 +17,11 @@ before_install:
   - sh -e /etc/init.d/xvfb start
 
 before_script:
-- npm install -g angular-cli@1.0.0-beta.26
-- npm install -g karma
 - npm install
 
 script:
-- ng build
-- karma start karma.conf.js --single-run
 - npm run lint
+- node_modules/.bin/ng build
+- node_modules/.bin/karma start karma.conf.js --single-run
+
 

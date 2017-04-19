@@ -2,7 +2,7 @@ import { HeaderComponent } from './header/header.component';
 import { ScrollTrackerDirective } from './scroll-tracker.directive';
 import { DogComponent } from './dog/dog.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { Angular2ImageGalleryModule } from 'angular2-image-gallery/app';
+import { Angular2ImageGalleryModule } from 'angular2-image-gallery';
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async } from '@angular/core/testing';

@@ -1,3 +1,4 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AccordionComponent } from './accordion.component';
@@ -7,7 +8,8 @@ const components = [AccordionComponent, AccordionPanelComponent];
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    BrowserAnimationsModule,
   ],
   exports: components,
   declarations: components

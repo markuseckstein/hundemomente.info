@@ -2,7 +2,7 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {By} from '@angular/platform-browser';
 import {DebugElement} from '@angular/core';
-
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {AccordionPanelComponent} from './accordion-panel.component';
 import {AccordionComponent} from '../accordion.component';
 
@@ -12,6 +12,7 @@ describe('AccordionPanelComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [NoopAnimationsModule],
       declarations: [AccordionPanelComponent],
       providers: [AccordionComponent]
     })

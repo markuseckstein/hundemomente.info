@@ -1,6 +1,6 @@
-import {Component, OnInit, Input, Optional, OpaqueToken, Inject} from '@angular/core';
+import {Component, OnInit, Input, Optional, InjectionToken, Inject} from '@angular/core';
 
-export const dateProvider = new OpaqueToken('YearCalcComponent-DateProvider');
+export const dateProvider = new InjectionToken<Date>('YearCalcComponent-DateProvider');
 
 @Component({
   selector: 'hm-year-calc',

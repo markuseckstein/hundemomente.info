@@ -15,6 +15,6 @@ export class DogComponent {
   get backgroundImageUrl() {
     return `url('${this.backgroundImage}')`;
   }
-  
+
   @Input() @HostBinding('style.background-position') backgroundPosition = '50% 50%';
 }

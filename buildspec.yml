@@ -19,7 +19,7 @@ phases:
       # - command
   build:
     commands:
-      - npm run ng -- build --prod --aot
+      - npm run build.prod
       # - command
   #post_build:
     #commands:

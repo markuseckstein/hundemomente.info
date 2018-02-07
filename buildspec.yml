@@ -9,13 +9,13 @@ version: 0.2
      # key: "value"
 
 phases:
-  install:
-    commands:
-      - npm install
-      # - command
-  #pre_build:
+  #install:
     #commands:
+      # npm install
       # - command
+  pre_build:
+    commands:
+       - npm install
       # - command
   build:
     commands:
@@ -27,7 +27,7 @@ phases:
       # - command
 artifacts:
   files:
-     - .
+     - dist/*
     # - location
   #discard-paths: yes
   #base-directory: location

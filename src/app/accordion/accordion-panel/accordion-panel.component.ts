@@ -1,5 +1,7 @@
-import {Component, Input, HostListener, style, animate, transition, state, trigger} from '@angular/core';
-import {AccordionComponent} from '../accordion.component';
+import { animate, state, style, transition, trigger } from '@angular/animations';
+import { Component, HostListener, Input } from '@angular/core';
+
+import { AccordionComponent } from '../accordion.component';
 
 @Component({
   selector: 'hm-accordion-panel',

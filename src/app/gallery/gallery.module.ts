@@ -7,20 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ImageService } from './services/image.service';
 
 @NgModule({
-  declarations: [GalleryComponent,
-    ViewerComponent,
-  ],
-  imports: [
-    CommonModule,
-    HttpClientModule,
-    BrowserAnimationsModule
-  ],
-  providers: [
-    ImageService
-  ],
-  exports: [
-    GalleryComponent,
-    ViewerComponent
-  ]
+    declarations: [GalleryComponent, ViewerComponent],
+    imports: [CommonModule, HttpClientModule, BrowserAnimationsModule],
+    providers: [ImageService],
+    exports: [GalleryComponent, ViewerComponent]
 })
-export class GalleryModule { }
+export class GalleryModule {}

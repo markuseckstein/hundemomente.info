@@ -1,4 +1,3 @@
-
 workflow "Build" {
   on = "push"
   resolves = ["Build Angular"]

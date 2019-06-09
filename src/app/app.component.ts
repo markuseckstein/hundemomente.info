@@ -7,7 +7,7 @@ import {HeaderComponent} from './header/header.component';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  @ViewChild('theHeader') header: HeaderComponent;
+  @ViewChild('theHeader', { static: true }) header: HeaderComponent;
 
   onViewerChange(visible: boolean) {
     this.header.isHidden = visible;

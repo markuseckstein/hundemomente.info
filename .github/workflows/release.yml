@@ -4,18 +4,17 @@ jobs:
     gitHubActionForNpm:
         name: GitHub Action for npm
         runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [12.x]
         steps:
-            - uses: actions/checkout@master
-            - name: GitHub Action for npm
-              uses: actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680
-              with:
-                  entrypoint: npm
-                  args: ci
+            - uses: actions/checkout@v2
             - name: 'Build '
-              uses: actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680
+              uses: actions/setup-node@v1
               with:
-                  entrypoint: npm
-                  args: run build.prod
+                  node-version: ${{ matrix.node-version }}
+            - run: npm ci
+            - run: npm run build.prod
             - name: markuseckstein/github_actions/ftp-deploy@master
               uses: markuseckstein/github_actions/ftp-deploy@master
               env:

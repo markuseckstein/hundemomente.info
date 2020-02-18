@@ -6,8 +6,8 @@ import { YearCalcComponent } from './year-calc/year-calc.component';
 import { HeaderComponent } from './header/header.component';
 import { ScrollTrackerDirective } from './scroll-tracker.directive';
 import { DogComponent } from './dog/dog.component';
-import { GalleryModule } from './gallery/gallery.module';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
+import { Angular2ImageGalleryModule } from 'angular2-image-gallery';
 
 @NgModule({
     declarations: [
@@ -20,7 +20,7 @@ import { NgxPageScrollModule } from 'ngx-page-scroll';
     imports: [
         BrowserModule,
         AccordionModule,
-        GalleryModule,
+        Angular2ImageGalleryModule,
         NgxPageScrollModule
     ],
     bootstrap: [AppComponent]

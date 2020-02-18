@@ -4,15 +4,12 @@ jobs:
     gitHubActionForNpm:
         name: GitHub Action for npm
         runs-on: ubuntu-latest
-        strategy:
-            matrix:
-                node-version: [12.x]
         steps:
             - uses: actions/checkout@v2
             - name: 'Build '
               uses: actions/setup-node@v1
               with:
-                  node-version: ${{ matrix.node-version }}
+                  node-version: '12.x'
             - run: npm ci
             - run: npm run build.prod
             - name: markuseckstein/github_actions/ftp-deploy@master

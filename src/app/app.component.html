@@ -6,7 +6,7 @@
 
 <hm-dog
     id="home"
-    [firstPart]="'Mein Name ist'"
+    firstPart="Mein Name ist"
     highlightPart="Scotti"
     subHeading="Ich bin ein Labradoodle"
     backgroundImage="../assets/banner-scotti.jpg"
@@ -17,6 +17,13 @@
     highlightPart="Emma"
     subHeading="Ich bin ebenfalls ein Labradoodle"
     backgroundImage="../assets/banner-emma.jpg"
+    backgroundPosition="56% 50%"
+></hm-dog>
+<hm-dog
+    firstPart="Und ich heiße"
+    highlightPart="Nelly"
+    subHeading="Der dritte Labradoodle"
+    backgroundImage="../assets/banner-nelly.jpg"
     backgroundPosition="56% 50%"
 ></hm-dog>
 
@@ -60,7 +67,15 @@
     sie ein apricotfarbenes Fell und wiegt nur 19 kg.
 </p>
 <p>
-    Emmas Lieblingsbeschäftigung ist Scotti zu ärgern und gestreichelt werden.
+    Emmas Lieblingsbeschäftigungen sind Scotti zu ärgern und gestreichelt
+    werden.
+</p>
+<h3>Nelly</h3>
+<p>Nelly ist am 31.07.2019 geboren und hat schwarzes wuscheliges Fell.</p>
+<p>
+    Ihre Mutter ist eine braune Labradorhündin und ihr Vater ein schwarzer
+    Großpudel. Sie wiegt zur Zeit 18 kg. Nellys Lieblingsbeschäftigungen sind
+    schmusen und ballspielen.
 </p>
 
 <h3>Steffi</h3>
@@ -70,7 +85,7 @@
         style="float:left; height: 170px; margin-right: 10px"
         src="../assets/steffi01.jpg"
     />
-    Mein Name ist <span>Steffi Kostka</span> und außer Scotti und Emma wohnen im
+    Mein Name ist <span>Steffi Kostka</span> und außer den Hunden wohnen im
     Haushalt noch mein Mann Hans und die drei Kinder Johanna (<hm-year-calc
         [yearAndMonth]="'2007-1'"
     ></hm-year-calc>
@@ -123,7 +138,7 @@
             Die Hunde sind absolut gesund, haben alle wichtigen Impfungen,
             werden regelmäßig entwurmt und bekommen eine Floh- und
             Zeckenprophylaxe. Scotti ist seit er 8 Wochen alt war bei mir, Emma
-            seit sie 10 Wochen alt ist.
+            seit sie 10 Wochen alt ist und Nelly seit sie 17 Wochen alt ist.
         </p>
     </hm-accordion-panel>
     <hm-accordion-panel [title]="'Qualifikation'">
@@ -134,14 +149,21 @@
                 target="_blank"
                 >Begleithundprüfung</a
             >
-            im Oktober 2014 erfolgreich bestanden, außerdem gehen wir in die
-            <a href="http://www.hundeschule-socius.de/" target="_blank"
-                >Hundschule Socius</a
-            >.
+            im Oktober 2014 erfolgreich bestanden.
         </p>
         <p>
             Emma hat die Begleithundprüfung und den Hundeführerschein im Juli
             2017 erfolgreich bestanden.
+        </p>
+        <p>
+            Nelly ist momentan noch in Ausbildung. Ab September 2020 - nach
+            erfolgreicher Begleithundeprüfung - wird sie das Team unterstützen.
+        </p>
+        <p>
+            Mit allen Hunden besuchen wir die
+            <a href="http://www.hundeschule-socius.de/" target="_blank"
+                >Hundschule Socius</a
+            >.
         </p>
     </hm-accordion-panel>
     <hm-accordion-panel [title]="'Welche Risiken gibt es?'">
@@ -167,31 +189,37 @@
         <ul>
             <li>
                 <a
-                    href="http://behindertenhilfe.rummelsberger-diakonie.de/standorte/standorte/hilpoltstein/auhof/"
+                    href="https://behindertenhilfe.rummelsberger-diakonie.de/standorte/standorte/roth/wohnen-in-roth/"
                     target="_blank"
                     >RDB Rummelsberger Dienste für Menschen mit Behinderung
-                    gGmbH Auhof in Hilpoltstein</a
+                    gGmbH Wohnheim Roth</a
                 >
             </li>
             <li>
                 <a
-                    href="http://behindertenhilfe.rummelsberger-diakonie.de/no/standorte/standorte/allersberg/foerderstaette-fuer-menschen-mit-autismus/"
+                    href="https://behindertenhilfe.rummelsberger-diakonie.de/standorte/standorte/rummelsberg/rummelsberger-dienste-fuer-menschen-mit-behinderung-gemeinnuetzige-gmbh/"
                     target="_blank"
                     >RDB Rummelsberger Dienste für Menschen mit Behinderung
-                    gGmbH Förderstätte für Menschen mit Autismus in
-                    Allersberg</a
+                    gGmbH Förderstätte Rummelsberg</a
                 >
             </li>
+
             <li>
-                RDB Rummelsberger Dienste für Menschen mit Behinderung gGmbH
-                Außenwohnheim in Allersberg
+                <a
+                    href="https://behindertenhilfe.rummelsberger-diakonie.de/standorte/standorte/altdorf/haus-mamre/"
+                    target="_blank"
+                >
+                    RDB Rummelsberger Dienste für Menschen mit Behinderung gGmbH
+                    Haus Mamre</a
+                >
             </li>
 
             <li>
                 <a
                     href="https://behindertenhilfe.rummelsberger-diakonie.de/wohnen/wohnenordner/wohnen-fuer-erwachsene/wurzhof-postbauer-heng/"
                     target="_blank"
-                    >Wurzhof, Postbauer-Heng</a
+                    >RDB Rummelsberger Dienste für Menschen mit Behinderung
+                    gGmbH Wurzhof</a
                 >
             </li>
         </ul>
@@ -200,7 +228,7 @@
 
 <h1 class="text-center title" id="bilder">Bilder</h1>
 <p class="lead text-center">
-    Einige Beispiele von der Arbeit mit Scotti und Emma.
+    Einige Beispiele von der Arbeit mit Scotti, Emma und Nelly.
     <br />
 </p>
 
@@ -210,13 +238,6 @@
     (viewerChange)="onViewerChange($event)"
 ></gallery>
 
-<h1 id="clients" class="title text-center">Beispielvideo</h1>
-<video
-    style="width:100%"
-    src="assets/video/scotti_video_small.mp4"
-    controls
-    preload="metadata"
-></video>
 <footer id="footer">
     <h1 class="title text-center" id="contact">Kontakt / Impressum</h1>
     <p class="large">Steffi Kostka</p>

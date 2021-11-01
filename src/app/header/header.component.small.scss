@@ -1,102 +1,100 @@
 @media only screen and (max-width: 650px) {
-  $header-height: 100px;
-  $header-height-small: 70px;
-  $menu-width: 220px;
+    $header-height: 100px;
+    $header-height-small: 70px;
+    $menu-width: 220px;
 
-  .header__logo {
-    display: none;
-  }
-
-  :host {
-    display: flex;
-    justify-content: space-between;
-    color: white;
-    background-color: rgba(0, 0, 0, .3);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: $header-height;
-    transition: height 500ms ease-out, background-color 500ms ease-out;
-  }
-
-  :host.header--small {
-    height: $header-height-small;
-    background-color: rgba(0, 0, 0, .9);
-
-    & .header__menu{
-      top: $header-height-small;
-    }
-  }
-
-  .header__heading{
-    font-size: 1em;
-    flex-grow: 1;
-    text-align: center;
-  }
-
-  .header__menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    position: fixed;
-    top: $header-height;
-    left: 0;
-    font-size: 2em;
-    width: $menu-width;
-    padding-left: 40px;
-    transform: translateX(-$menu-width);
-    transition: transform 300ms ease-out;
-    background-color: rgba(0, 0, 0, .9);
-    &.header__menu--open {
-      transform: translateX(0);
+    .header__logo {
+        display: none;
     }
 
-    a {
-      margin-bottom: 25px;
-      color: white;
+    :host {
+        display: flex;
+        justify-content: space-between;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.3);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: $header-height;
+        transition: height 500ms ease-out, background-color 500ms ease-out;
     }
-  }
 
-  .header__logo-image {
-    background-image: url('../../assets/logo.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 40px;
-    height: 100%;
-  }
+    :host.header--small {
+        height: $header-height-small;
+        background-color: rgba(0, 0, 0, 0.9);
 
-  .header__small-menu-titlebar {
-    width: 100%;
-    margin: 0 25px;
-    display: flex;
-    justify-content: space-around;
-    align-items:center;
-  }
-
-  .header__hamburger{
-    width: 40px;
-    height: 40px;
-    position: relative;
-    padding-left: 1.25em;
-    transition: transform 400ms ease-out;
-
-    &.header__hamburger--open {
-      transform: rotate(90deg);
+        & .header__menu {
+            top: $header-height-small;
+        }
     }
-  }
 
-  .header__hamburger:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0.5em;
-    width: 2em;
-    height: 0.15em;
-    background: white;
-    box-shadow:
-      0 0.5em 0 0 white,
-      0 1em 0 0 white;
-  }
+    .header__heading {
+        font-size: 1em;
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    .header__menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        position: fixed;
+        top: $header-height;
+        left: 0;
+        font-size: 2em;
+        width: $menu-width;
+        padding-left: 40px;
+        transform: translateX(-$menu-width);
+        transition: transform 300ms ease-out;
+        background-color: rgba(0, 0, 0, 0.9);
+        &.header__menu--open {
+            transform: translateX(0);
+        }
+
+        a {
+            margin-bottom: 25px;
+            color: white;
+        }
+    }
+
+    .header__logo-image {
+        background-image: url('../../assets/logo.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 40px;
+        height: 100%;
+    }
+
+    .header__small-menu-titlebar {
+        width: 100%;
+        margin: 0 25px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .header__hamburger {
+        width: 40px;
+        height: 40px;
+        position: relative;
+        padding-left: 1.25em;
+        transition: transform 400ms ease-out;
+
+        &.header__hamburger--open {
+            transform: rotate(90deg);
+        }
+    }
+
+    .header__hamburger:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0.5em;
+        width: 2em;
+        height: 0.15em;
+        background: white;
+        box-shadow: 0 0.5em 0 0 white, 0 1em 0 0 white;
+    }
 }

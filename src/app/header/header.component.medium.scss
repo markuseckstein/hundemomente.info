@@ -1,62 +1,63 @@
 @media only screen and (min-width: 651px) and (max-width: 1000px) {
-  .header__heading, .header__subheading, .header__small-menu-titlebar {
-    display: none;
-  }
-
-  :host {
-    display: flex;
-    justify-content: space-between;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.3);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 120px;
-    transition: height 500ms ease-out, background-color 500ms ease-out;
-  }
-
-  :host.header--small {
-    height: 80px;
-    background-color: rgba(0, 0, 0, 0.9);
-    & .header__subheading {
-      transform: translateX(120px);
+    .header__heading,
+    .header__subheading,
+    .header__small-menu-titlebar {
+        display: none;
     }
 
-    & .header__heading {
-      transform: translateY(-25px);
+    :host {
+        display: flex;
+        justify-content: space-between;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.3);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 120px;
+        transition: height 500ms ease-out, background-color 500ms ease-out;
     }
 
-    & .header__logo-image {
-      height: 70px;
+    :host.header--small {
+        height: 80px;
+        background-color: rgba(0, 0, 0, 0.9);
+        & .header__subheading {
+            transform: translateX(120px);
+        }
+
+        & .header__heading {
+            transform: translateY(-25px);
+        }
+
+        & .header__logo-image {
+            height: 70px;
+        }
     }
-  }
 
-  .header__logo {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .header__logo-image {
-    background-image: url('../../assets/logo.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 120px;
-    height: 120px;
-    transition: transform 500ms ease-out;
-    transform: scale(.7);
-  }
-
-  .header__menu {
-    display: flex;
-    flex-direction: row;
-    flex-grow: 1;
-    justify-content: space-around;
-    align-items: center;
-    & a {
-      padding: 10px 20px;
+    .header__logo {
+        display: flex;
+        flex-direction: column;
     }
-  }
 
+    .header__logo-image {
+        background-image: url('../../assets/logo.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 120px;
+        height: 120px;
+        transition: transform 500ms ease-out;
+        transform: scale(0.7);
+    }
+
+    .header__menu {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 1;
+        justify-content: space-around;
+        align-items: center;
+        & a {
+            padding: 10px 20px;
+        }
+    }
 }

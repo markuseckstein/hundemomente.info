@@ -3,39 +3,39 @@
 $border-radius: 5px;
 
 :host {
-  margin-bottom: 12px;
-  border: 1px solid #f0f0f0;
-  border-bottom-left-radius: $border-radius;
-  border-bottom-right-radius: $border-radius;
-  overflow: hidden;
+    margin-bottom: 12px;
+    border: 1px solid #f0f0f0;
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+    overflow: hidden;
 }
 
 .accordion-panel__title {
-  background-color: $default-color;
-  color: white;
-  font-size: $default-font-size;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 2em;
-  padding: 0 15px;
-  transition: background-color 100ms ease-in;
-  border-top-left-radius: $border-radius;
-  border-top-right-radius: $border-radius;
+    background-color: $default-color;
+    color: white;
+    font-size: $default-font-size;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 2em;
+    padding: 0 15px;
+    transition: background-color 100ms ease-in;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
 
-  &:hover {
-    background-color: $highlight-color;
-  }
+    &:hover {
+        background-color: $highlight-color;
+    }
 }
 
 .accordion-panel__title--active {
-  background-color: $highlight-color;
+    background-color: $highlight-color;
 }
 
 .accordion-panel__content-wrapper {
-  background-color: #fafafa;
+    background-color: #fafafa;
 }
 
 .accordion-panel__content {
-  padding: 15px;
+    padding: 15px;
 }

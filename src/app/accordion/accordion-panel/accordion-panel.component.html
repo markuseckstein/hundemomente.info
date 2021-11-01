@@ -1,8 +1,17 @@
-<div class="accordion-panel__title" [class.accordion-panel__title--active]="isOpen">
-  <span class="accordion-panel__title-heading">{{title}}</span>
-  <i class="fa" [class.fa-plus-square-o]="!isOpen" [class.fa-minus-square-o]="isOpen" aria-hidden="true"></i></div>
+<div
+    class="accordion-panel__title"
+    [class.accordion-panel__title--active]="isOpen"
+>
+    <span class="accordion-panel__title-heading">{{ title }}</span>
+    <i
+        class="fa"
+        [class.fa-plus-square-o]="!isOpen"
+        [class.fa-minus-square-o]="isOpen"
+        aria-hidden="true"
+    ></i>
+</div>
 <div [@smooth]="smooth" class="accordion-panel__content-wrapper">
-  <div class="accordion-panel__content">
-    <ng-content></ng-content>
-  </div>
+    <div class="accordion-panel__content">
+        <ng-content></ng-content>
+    </div>
 </div>

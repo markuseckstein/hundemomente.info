@@ -1,91 +1,91 @@
 :host {
-  z-index: 1;
+    z-index: 1;
 
-  .header__menu {
-    & a {
-      cursor: pointer;
-      text-decoration: none;
+    .header__menu {
+        & a {
+            cursor: pointer;
+            text-decoration: none;
+        }
     }
-  }
 }
 
 :host(.header--hidden) {
-  display: none;
+    display: none;
 }
 
 @media only screen and (min-width: 1001px) {
-  .header__small-menu-titlebar {
-    display: none;
-  }
-
-  :host {
-    display: flex;
-    justify-content: space-between;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.3);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 180px;
-    transition: height 500ms ease-out, background-color 500ms ease-out;
-  }
-
-  // this is needed because of changes in flexbox spec which now behave different
-  // in Chrome than in other browsers:
-  // https://stackoverflow.com/questions/26895349/how-can-i-get-ff-33-x-flexbox-behavior-in-ff-34-x
-  * {
-    min-height: 0;
-  }
-
-  :host.header--small {
-    height: 120px;
-    background-color: rgba(0, 0, 0, .9);
-    & .header__subheading {
-      transform: translateX(120px);
+    .header__small-menu-titlebar {
+        display: none;
     }
 
-    & .header__heading {
-      transform: translateY(-25px);
+    :host {
+        display: flex;
+        justify-content: space-between;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.3);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 180px;
+        transition: height 500ms ease-out, background-color 500ms ease-out;
     }
 
-    & .header__logo-image {
-      transform: scale(1);
+    // this is needed because of changes in flexbox spec which now behave different
+    // in Chrome than in other browsers:
+    // https://stackoverflow.com/questions/26895349/how-can-i-get-ff-33-x-flexbox-behavior-in-ff-34-x
+    * {
+        min-height: 0;
     }
-  }
 
-  .header__logo {
-    display: flex;
-    flex-direction: column;
-  }
+    :host.header--small {
+        height: 120px;
+        background-color: rgba(0, 0, 0, 0.9);
+        & .header__subheading {
+            transform: translateX(120px);
+        }
 
-  .header__heading {
-    transition: transform 500ms ease-out;
-    font-size: 2.2em;
-  }
+        & .header__heading {
+            transform: translateY(-25px);
+        }
 
-  .header__subheading {
-    font-size: 1.3em;
-    transition: transform 500ms ease-out;
-  }
-
-  .header__logo-image {
-    background-image: url('../../assets/logo.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 120px;
-    height: 120px;
-    transition: transform 500ms ease-out;
-    transform: scale(.7);
-  }
-
-  .header__menu {
-    display: flex;
-    flex-direction: row;
-
-    & a {
-      padding: 10px 20px;
+        & .header__logo-image {
+            transform: scale(1);
+        }
     }
-  }
+
+    .header__logo {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header__heading {
+        transition: transform 500ms ease-out;
+        font-size: 2.2em;
+    }
+
+    .header__subheading {
+        font-size: 1.3em;
+        transition: transform 500ms ease-out;
+    }
+
+    .header__logo-image {
+        background-image: url('../../assets/logo.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 120px;
+        height: 120px;
+        transition: transform 500ms ease-out;
+        transform: scale(0.7);
+    }
+
+    .header__menu {
+        display: flex;
+        flex-direction: row;
+
+        & a {
+            padding: 10px 20px;
+        }
+    }
 }

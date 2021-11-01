@@ -15,14 +15,14 @@ import { Angular2ImageGalleryModule } from 'angular2-image-gallery';
         YearCalcComponent,
         HeaderComponent,
         ScrollTrackerDirective,
-        DogComponent
+        DogComponent,
     ],
     imports: [
         BrowserModule,
         AccordionModule,
         Angular2ImageGalleryModule,
-        NgxPageScrollModule
+        NgxPageScrollModule,
     ],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
 })
 export class AppModule {}

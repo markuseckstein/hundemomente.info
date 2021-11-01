@@ -7,11 +7,8 @@ import { AccordionPanelComponent } from './accordion-panel/accordion-panel.compo
 const components = [AccordionComponent, AccordionPanelComponent];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    BrowserAnimationsModule,
-  ],
-  exports: components,
-  declarations: components
+    imports: [CommonModule, BrowserAnimationsModule],
+    exports: components,
+    declarations: components,
 })
-export class AccordionModule { }
+export class AccordionModule {}

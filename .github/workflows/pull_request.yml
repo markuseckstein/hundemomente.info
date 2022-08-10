@@ -1,0 +1,16 @@
+on:
+    pull_request:
+name: Pull Request
+jobs:
+    build:
+        name: GitHub Action for npm
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout
+            - name: 'Build '
+              uses: actions/setup-node
+              with:
+                  node-version: '16.x'
+            - run: npm ci
+            - run: npm run build.prod
+            

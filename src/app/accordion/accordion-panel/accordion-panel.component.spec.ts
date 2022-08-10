@@ -8,15 +8,13 @@ describe('AccordionPanelComponent', () => {
     let component: AccordionPanelComponent;
     let fixture: ComponentFixture<AccordionPanelComponent>;
 
-    beforeEach(
-        waitForAsync(() => {
-            TestBed.configureTestingModule({
-                imports: [NoopAnimationsModule],
-                declarations: [AccordionPanelComponent],
-                providers: [AccordionComponent],
-            }).compileComponents();
-        })
-    );
+    beforeEach(waitForAsync(() => {
+        TestBed.configureTestingModule({
+            imports: [NoopAnimationsModule],
+            declarations: [AccordionPanelComponent],
+            providers: [AccordionComponent],
+        }).compileComponents();
+    }));
 
     beforeEach(() => {
         fixture = TestBed.createComponent(AccordionPanelComponent);

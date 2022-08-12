@@ -4,8 +4,8 @@ on:
             - master
 name: Deploy on Release
 jobs:
-    gitHubActionForNpm:
-        name: GitHub Action for npm
+    build:
+        name: Build Prod
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3

@@ -3,7 +3,7 @@ on:
 name: Pull Request
 jobs:
     build:
-        name: GitHub Action for npm
+        name: Build and Lint
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3

@@ -27,7 +27,7 @@ export class YearCalcComponent implements OnInit {
     }
 
     ngOnInit() {
-        // tslint:disable-next-line
+        // eslint-disable-next-line
         let [year, month] = this.yearAndMonth
             .split('-')
             .map((x) => parseInt(x, 10));

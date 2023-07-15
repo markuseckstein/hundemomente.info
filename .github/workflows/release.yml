@@ -15,11 +15,12 @@ jobs:
                   node-version: '16.x'
             - run: npm ci
             - run: npm run build
-            - name: markuseckstein/github_actions/ftp-deploy@master
-              uses: markuseckstein/github_actions/ftp-deploy@master
-              env:
-                  FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-                  FTP_SERVER: ${{ secrets.FTP_SERVER }}
-                  FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-                  LOCAL_DIR: ${{ secrets.LOCAL_DIR }}
-                  REMOTE_DIR: ${{ secrets.REMOTE_DIR }}
+            - name: FTP-Deploy
+              uses: sebastianpopp/ftp-action@releases/v2
+              with:
+                host: ${{ secrets.FTP_SERVER }}
+                user: ${{ secrets.FTP_USERNAME }}
+                password: ${{ secrets.FTP_PASSWORD }}
+                localDir: "dist"
+                remoteDir: "public_html"
+

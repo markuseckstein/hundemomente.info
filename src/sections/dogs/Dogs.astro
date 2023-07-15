@@ -1,0 +1,65 @@
+---
+import { Image } from "@astrojs/image/components";
+import steffi from "../../images/steffi01.jpg";
+import nelly from "../../images/dogs/nelly01.jpg";
+import scotti from "../../images/dogs/scotti01.jpg";
+import emma from "../../images/dogs/emma01.jpg";
+import jimmy from "../../images/dogs/jimmy01.jpg";
+import Dog from "./Dog.astro";
+---
+
+<section class="bg-white dark:bg-gray-900">
+  <div class="container px-6 py-10 mx-auto">
+    <h1
+      class="text-2xl font-semibold text-center text-gray-800 lg:text-3xl dark:text-white"
+    >
+      Wer sind <span class="text-blue-500">wir?</span>
+    </h1>
+
+    <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-16 md:grid-cols-2">
+      <Dog image={steffi} name="Steffi">
+        <p>
+          Mein Name ist Steffi Kostka und außer den Hunden wohnen im Haushalt
+          noch mein Mann Hans und die drei Kinder Johanna, Carina und Rosalie.
+        </p>
+      </Dog>
+
+      <Dog image={scotti} name="Scotti">
+        <p>
+          Scotti ist ein Labradoodle, eine Mischung aus Labrador und Großpudel,
+          geboren am 26.04.2013 in Niederlauterbach in der Hallertau. Er wiegt
+          30 kg.
+        </p>
+        <p>
+          Scottis Lieblingsbeschäftigungen sind schlafen, gekrault werden,
+          fressen und spielen mit seinen Hundefreunden.
+        </p>
+      </Dog>
+      <Dog image={emma} name="Emma">
+        <p>
+          Emma ist am 29.06.2016 geboren und ebenfalls ein Labradoodle,
+          allerdings hat sie ein apricotfarbenes Fell und wiegt nur 19 kg.
+        </p>
+      </Dog>
+      <Dog image={nelly} name="Nelly">
+        <p>
+          Nelly ist am 31.07.2019 geboren und hat schwarzes wuscheliges Fell.
+        </p><p>
+          Ihre Mutter ist eine braune Labradorhündin und ihr Vater ein schwarzer
+          Großpudel. Sie wiegt zur Zeit 27 kg. Nellys Lieblingsbeschäftigungen
+          sind schmusen und ballspielen.
+        </p>
+      </Dog>
+      <Dog image={jimmy} name="Jimmy">
+        <p>
+          Jimmy ist der neueste Mitarbeiter. Er ist ein Cavapoo und hat im
+          ausgewachsenen Zustand ca. 8 kg und ist am 13.02.2023 geboren.
+        </p>
+        <p>
+          Momentan lernt er viel von den Kollegen und besucht fleißig die
+          Hundeschule.
+        </p>
+      </Dog>
+    </div>
+  </div>
+</section>

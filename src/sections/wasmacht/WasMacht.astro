@@ -1,0 +1,71 @@
+---
+import { Image, Picture } from "@astrojs/image/components";
+import logo from "../images/logo.png";
+import wasmachtImage from "./wasmacht.jpg";
+---
+
+<section class="py-20 bg-gray-200">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-wrap items-center">
+      <div class="w-full md:w-5/12 px-4 mr-auto ml-auto">
+        <h3 class="text-3xl mb-2 font-semibold leading-normal">
+          Was macht eigentlich ein Hundebesuchsdienst?
+        </h3>
+        <p class="text-lg leading-relaxed mt-4 mb-4 text-gray-700">
+          Für jeden Besuch versuche ich neue kleine Aufgaben an die Personen zu
+          stellen, welche gerade in der Gruppe bzw. in den Gemeinschaftsräumen
+          gut zu erfüllen sind. Die Personen sollen ganzheitlich aktiviert
+          werden.
+        </p>
+        <p class="text-lg leading-relaxed mt-0 mb-4 text-gray-700">
+          In Einzelsitzungen können ganz persönliche Aktionen mit den
+          betreffenden Personen stattfinden - vom einfachen Anstupsen bis zu
+          engem Körperkontakt. Durch diese Nähe und Wärme werden viele Sinne
+          angesprochen und aktiviert.
+        </p>
+        <p class="text-lg leading-relaxed mt-0 mb-4 text-gray-700">
+          Man sieht also, dass die Ansprüche über das bloße Streicheln
+          hinausgehen – obwohl das auch ein sehr wichtiger und nicht zu
+          unterschätzender Faktor in der Mensch-Hund-Begegnung ist. Der Hund ist
+          in der Arbeit ein anderes Mittel, um die Menschen zu erreichen – im
+          Mittelpunkt der Arbeit steht aber immer die Person mit ihren
+          Bedürfnissen.
+        </p>
+      </div>
+      <div class="w-full md:w-4/12 px-4 mr-auto ml-auto">
+        <div
+          class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg"
+        >
+          <!-- <img
+                        alt="..."
+                        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80"
+                        class="w-full align-middle rounded-t-lg"
+                    /> -->
+          <Picture
+            widths={[400, 800]}
+            alt="Beispiel für die Arbeit eines Hundebesuchsdienstes"
+            src={wasmachtImage}
+            class="w-full align-middle rounded-t-lg"
+          />
+          <blockquote class="relative p-8 mb-4">
+            <!-- <svg
+                            preserveAspectRatio="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 583 95"
+                            class="absolute left-0 w-full block"
+                            style="height: 95px; top: -94px;"
+                        >
+                            <polygon
+                                points="-30,95 583,95 583,65"
+                                class="text-pink-600 fill-current"></polygon>
+                        </svg> -->
+            <p class="text-md font-light mt-2 text-black">
+              Wenn die betreffende Person dazu in der Lage ist, können zum
+              Beispiel auch Kunststückchen selbständig beigebracht werden.
+            </p>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

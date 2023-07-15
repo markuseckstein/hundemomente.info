@@ -1,0 +1,26 @@
+---
+import { Picture } from "@astrojs/image/components";
+
+export interface Props {
+  name: string;
+  birthday: string;
+  image: string;
+}
+
+const { name, birthday, image } = Astro.props;
+---
+
+<div class="grid grid-cols-1 sm:grid-cols-2">
+  <Picture
+    widths={[400, 800]}
+    alt="Hund {name}"
+    src={image}
+    class="object-cover border-2"
+  />
+
+  <div class="mx-8 my-8 sm:my-0">
+    <h2 class="text-2xl">{name}</h2>
+
+    <slot />
+  </div>
+</div>

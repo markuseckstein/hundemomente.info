@@ -1,0 +1,39 @@
+---
+import { Image } from "@astrojs/image/components";
+import logo from "../images/logo.png";
+---
+
+<section
+  class="relative h-screen content-center items-center justify-center text-white"
+>
+  <div
+    class="absolute top-0 w-full h-full bg-center bg-cover"
+    style='background-image: url("/images/wiese.jpg");'
+  >
+    <span id="blackOverlay" class="w-full h-full absolute opacity-50 bg-black"
+    ></span>
+  </div>
+
+  <div
+    class="container relative mx-auto max-w-screen-xl flex h-full items-bottom"
+  >
+    <div class="mx-auto max-w-3xl text-center flex-bottom">
+      <div>
+        <div class="w-full lg:w-auto flex justify-center">
+          <Image src={logo} alt="Logo" />
+        </div>
+      </div>
+      <h1 class="text-3xl font-bold sm:text-5xl">
+        <!-- class="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 text-transparent bg-clip-text" -->
+        <span class="">Hundebegegnungen</span>
+      </h1>
+      <h2 class="text-2xl my-3">
+        für Senioren, Kinder und Menschen mit Behinderung.
+      </h2>
+
+      <p class="mx-auto mt-4 max-w-xl sm:text-xl/relaxed">
+        In Einzel- und Gruppensitzungen.
+      </p>
+    </div>
+  </div>
+</section>

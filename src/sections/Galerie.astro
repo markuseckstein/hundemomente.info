@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image, Picture } from "@astrojs/image/components";
+
+const galeryImages = await Astro.glob("../images/galerie/*.jpg").then((res) =>
+  res.map((file) => file.default)
+);
+---
+
+<Layout title="Hundemomente.info - Hundebegegnungen">
+  <main>
+    <div class="container px-6 py-10 mx-auto">
+      <h1 class="text-2xl font-semibold text-center text-gray-800 lg:text-3xl">
+        Beispiele für die <span class="text-blue-500"
+          >Arbeit mit den Hunden</span
+        >
+      </h1>
+
+      <div class="mt-8 grid gap-4 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+        {
+          galeryImages.map((galImg) => (
+            <Picture
+              alt=""
+              src={galImg.src}
+              widths={[400, 800, 1200]}
+              aspectRatio={galImg.width / galImg.height}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </main>
+</Layout>

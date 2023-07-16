@@ -1,10 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Image, Picture } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 
-const galeryImages = await Astro.glob("../images/galerie/*.jpg").then((res) =>
-  res.map((file) => file.default)
-);
+const galeryImages = await Astro.glob("../assets/images/galerie/*.jpg");
 ---
 
 <Layout title="Hundemomente.info - Hundebegegnungen">
@@ -18,13 +16,8 @@ const galeryImages = await Astro.glob("../images/galerie/*.jpg").then((res) =>
 
       <div class="mt-8 grid gap-4 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
         {
-          galeryImages.map((galImg) => (
-            <Picture
-              alt=""
-              src={galImg.src}
-              widths={[400, 800, 1200]}
-              aspectRatio={galImg.width / galImg.height}
-            />
+          galeryImages.map(im => (
+            <Image src={im.default} width="485" alt="Beispiel für die Arbeit mit den Hunden"></Image>
           ))
         }
       </div>

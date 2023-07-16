@@ -1,7 +1,6 @@
 ---
-import { Image, Picture } from "@astrojs/image/components";
-import logo from "../images/logo.png";
-import wasmachtImage from "./wasmacht.jpg";
+import { Image} from "astro:assets";
+import wasmachtImage from "../../assets/images/wasmacht/wasmacht.jpg";
 ---
 
 <section class="py-20 bg-gray-200">
@@ -41,8 +40,8 @@ import wasmachtImage from "./wasmacht.jpg";
                         src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80"
                         class="w-full align-middle rounded-t-lg"
                     /> -->
-          <Picture
-            widths={[400, 800]}
+          <Image
+            width="400"
             alt="Beispiel für die Arbeit eines Hundebesuchsdienstes"
             src={wasmachtImage}
             class="w-full align-middle rounded-t-lg"

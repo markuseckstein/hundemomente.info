@@ -1,14 +1,14 @@
 ---
-import { Picture } from "@astrojs/image/components";
-import zieleImage from "./ziele.jpg";
+import { Image } from "astro:assets";
+import zieleImage from "../../assets/images/ziele/ziele.jpg";
 ---
 
 <section class="relative py-20">
   <div class="container mx-auto px-4">
     <div class="items-center flex flex-wrap">
       <div class="w-full md:w-4/12 ml-auto mr-auto px-4">
-        <Picture
-          widths={[400, 800]}
+        <Image
+          width="400"
           alt="zwei Hunde mit Mensch"
           src={zieleImage}
           class="max-w-full rounded-lg shadow-lg"

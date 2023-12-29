@@ -1,26 +1,25 @@
 on:
-    push:
-        branches:
-            - master
+  push:
+    branches:
+      - master
 name: Deploy on Release
 jobs:
-    build:
-        name: Build Prod
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v3
-            - name: 'Build '
-              uses: actions/setup-node@v3
-              with:
-                  node-version: '16.x'
-            - run: npm ci
-            - run: npm run build
-            - name: FTP-Deploy
-              uses: sebastianpopp/ftp-action@releases/v2
-              with:
-                host: ${{ secrets.FTP_SERVER }}
-                user: ${{ secrets.FTP_USERNAME }}
-                password: ${{ secrets.FTP_PASSWORD }}
-                localDir: "dist"
-                remoteDir: "public_html"
-
+  build:
+    name: Build Prod
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: "Build"
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+      - run: npm ci
+      - run: npm run build
+      - name: FTP-Deploy
+        uses: sebastianpopp/ftp-action@releases/v2
+        with:
+          host: ${{ secrets.FTP_SERVER }}
+          user: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          localDir: "dist"
+          remoteDir: "public_html"

@@ -1,16 +1,15 @@
 on:
-    pull_request:
+  pull_request:
 name: Pull Request
 jobs:
-    build:
-        name: Build and Lint
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v3
-            - name: 'Build '
-              uses: actions/setup-node@v3
-              with:
-                  node-version: '16.x'
-            - run: npm ci
-            - run: npm run build
-            
+  build:
+    name: Build and Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: "Build"
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+      - run: npm ci
+      - run: npm run build

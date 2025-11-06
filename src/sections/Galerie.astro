@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 
-const galeryImages = await Astro.glob("../assets/images/galerie/*.jpg");
+const galeryImages = Object.values(import.meta.glob("../assets/images/galerie/*.jpg", { eager: true }));
 ---
 
 <Layout title="Hundemomente.info - Hundebegegnungen">

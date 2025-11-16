@@ -12,17 +12,21 @@ const { name, image, memorial = false } = Astro.props;
 ---
 
 <div class="grid grid-cols-1 sm:grid-cols-2 relative">
-  {memorial && (
-    <div class="absolute top-2 left-2 bg-gradient-to-r from-amber-100 to-amber-50 border-2 border-amber-300 px-4 py-2 rounded-lg shadow-md z-10">
-      <span class="text-amber-800 font-semibold text-sm">⭐ In liebevoller Erinnerung</span>
-    </div>
-  )}
+  {
+    memorial && (
+      <div class="absolute top-2 left-2 bg-gradient-to-r from-amber-100 to-amber-50 border-2 border-amber-300 px-4 py-2 rounded-lg shadow-md z-10">
+        <span class="text-amber-800 font-semibold text-sm">
+          ⭐ In liebevoller Erinnerung
+        </span>
+      </div>
+    )
+  }
 
   <Image
     width="400"
     alt="Hund {name}"
     src={image}
-    class={`object-cover border-2 ${memorial ? 'opacity-60 border-amber-300' : ''}`}
+    class={`object-cover border-2 ${memorial ? "opacity-60 border-amber-300" : ""}`}
   />
 
   <div class="mx-8 my-8 sm:my-0">

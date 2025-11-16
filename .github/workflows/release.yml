@@ -2,6 +2,7 @@ on:
   push:
     branches:
       - master
+  workflow_dispatch:
 name: Deploy on Release
 jobs:
   build:
@@ -19,6 +20,8 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
+          protocol: ftps
+          port: 21
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/

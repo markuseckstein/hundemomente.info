@@ -13,11 +13,11 @@ jobs:
       - name: "Build"
         uses: actions/setup-node@v3
         with:
-          node-version: "20"
+          node-version: "22"
       - run: npm ci
       - run: npm run build
       - name: FTP-Deploy
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
           server: ${{ secrets.FTP_SERVER }}
           protocol: ftps

@@ -1,26 +1,100 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+import { Image, getImage } from "astro:assets";
 
-const galeryImages = Object.values(import.meta.glob("../assets/images/galerie/*.jpg", { eager: true }));
+const dogNames: Record<string, string> = {
+  emma: "Emma",
+  nelly: "Nelly",
+  jimmy: "Jimmy",
+  kalle: "Kalle",
+  scotti: "Scotti",
+};
+
+// Dateiname "06-jimmy-nelly.jpg" -> "Jimmy und Nelly bei der Arbeit"
+function altFromFilename(path: string) {
+  const slug = path.split("/").pop()!.replace(/^\d+-|\.jpg$/g, "");
+  const names = slug.split("-").map((part) => dogNames[part]).filter(Boolean);
+  if (names.length === 0) {
+    return "Die Hunde gemeinsam bei der Arbeit";
+  }
+  return `${names.join(" und ")} bei der Arbeit`;
+}
+
+const galeryImages = await Promise.all(
+  Object.entries(
+    import.meta.glob<{ default: ImageMetadata }>(
+      "../assets/images/galerie/*.jpg",
+      { eager: true },
+    ),
+  )
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(async ([path, im]) => ({
+      image: im.default,
+      alt: altFromFilename(path),
+      large: await getImage({ src: im.default, width: 1600 }),
+    })),
+);
 ---
 
-<Layout title="Hundemomente.info - Hundebegegnungen">
-  <main>
-    <div class="container px-6 py-10 mx-auto">
-      <h1 class="text-2xl font-semibold text-center text-gray-800 lg:text-3xl">
-        Beispiele für die <span class="text-blue-500"
-          >Arbeit mit den Hunden</span
-        >
-      </h1>
+<section>
+  <div class="container px-6 py-10 mx-auto">
+    <h1 class="text-2xl font-semibold text-center text-gray-800 lg:text-3xl">
+      Beispiele für die <span class="text-blue-500">Arbeit mit den Hunden</span>
+    </h1>
 
-      <div class="mt-8 grid gap-4 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
-        {
-          galeryImages.map(im => (
-            <Image src={im.default} width="485" alt="Beispiel für die Arbeit mit den Hunden"></Image>
-          ))
-        }
-      </div>
+    <div class="mt-8 grid gap-4 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+      {
+        galeryImages.map(({ image, alt, large }) => (
+          <button
+            type="button"
+            class="galerie-item cursor-zoom-in"
+            data-src={large.src}
+            data-alt={alt}
+            aria-label={`${alt} – vergrößern`}
+          >
+            <Image src={image} width="485" alt={alt} />
+          </button>
+        ))
+      }
     </div>
-  </main>
-</Layout>
+  </div>
+
+  <dialog
+    id="galerie-dialog"
+    class="m-auto max-w-[95vw] max-h-[95vh] p-0 bg-transparent backdrop:bg-black/80"
+  >
+    <form method="dialog">
+      <button
+        class="absolute top-2 right-2 w-10 h-10 rounded-full bg-black/60 text-white text-2xl leading-none"
+        aria-label="Schließen">&times;</button
+      >
+    </form>
+    <img
+      id="galerie-dialog-image"
+      class="max-w-[95vw] max-h-[95vh] object-contain"
+      alt=""
+    />
+  </dialog>
+</section>
+
+<script>
+  const dialog = document.getElementById("galerie-dialog") as HTMLDialogElement;
+  const dialogImage = document.getElementById(
+    "galerie-dialog-image",
+  ) as HTMLImageElement;
+
+  document.querySelectorAll<HTMLButtonElement>(".galerie-item").forEach((item) => {
+    item.addEventListener("click", () => {
+      dialogImage.src = item.dataset.src!;
+      dialogImage.alt = item.dataset.alt!;
+      dialog.showModal();
+    });
+  });
+
+  // Klick auf das Bild oder den abgedunkelten Hintergrund schließt die Ansicht
+  dialog.addEventListener("click", (event) => {
+    if (event.target === dialog || event.target === dialogImage) {
+      dialog.close();
+    }
+  });
+</script>

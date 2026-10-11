@@ -1,11 +1,24 @@
 ---
 import "../styles/global.css";
+import { getImage } from "astro:assets";
+import previewImage from "../assets/images/wiese.jpg";
 
 export interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
+const description =
+  "Hundebesuchsdienst mit Emma, Nelly, Jimmy und Kalle: Hundebegegnungen für Senioren, Kinder und Menschen mit Behinderung – in Einzel- und Gruppensitzungen.";
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const preview = await getImage({
+  src: previewImage,
+  width: 1200,
+  height: 630,
+  fit: "cover",
+  format: "jpg",
+});
+const previewUrl = new URL(preview.src, Astro.site);
 ---
 
 <!DOCTYPE html>
@@ -16,6 +29,18 @@ const { title } = Astro.props;
     <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:site_name" content="Hundemomente" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={previewUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
   </head>
   <body class="text-gray-800 antialiased">
     <nav
